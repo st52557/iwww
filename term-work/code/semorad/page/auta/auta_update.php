@@ -3,13 +3,8 @@ $errorFeedbacks = array();
 $successFeedback = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (empty($_POST["email"])) {
-        $feedbackMessage = "email is required";
-        array_push($errorFeedbacks, $feedbackMessage);
-    }
-
-    if (empty($_POST["password"])) {
-        $feedbackMessage = "password is required";
+    if (empty($_POST["spz"])) {
+        $feedbackMessage = "spz is required";
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
@@ -18,13 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $conn->prepare("UPDATE Uzivatele 
-        SET email= :email, password= :password  WHERE ID_Uzivatel = :id");
+        $stmt = $conn->prepare("UPDATE Auta 
+        SET SPZ= :spz, Nazev= :nazev  WHERE ID_Auta = :id");
         $stmt->bindParam(':id', $_POST["id"]);
-        $stmt->bindParam(':email', $_POST["email"]);
-        $stmt->bindParam(':password', $_POST["password"]);
+        $stmt->bindParam(':spz', $_POST["spz"]);
+        $stmt->bindParam(':nazev', $_POST["nazev"]);
         $stmt->execute();
-        $successFeedback = "User was updated";
+        $successFeedback = "Auto was updated";
     }
 }
 ?>
@@ -44,7 +39,7 @@ if (!empty($errorFeedbacks)) {
 if (empty($errorFeedbacks)) { //load data origin data from database
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM Uzivatele WHERE ID_Uzivatel = :id");
+    $stmt = $conn->prepare("SELECT * FROM Auta WHERE ID_Uzivatel = :id");
     $stmt->bindParam(':id', $_GET["id"]);
     $stmt->execute();
     $user = $stmt->fetch();
@@ -59,7 +54,7 @@ if (empty($errorFeedbacks)) { //load data origin data from database
 
 <form method="post">
     <input type="hidden" name="id" value="<?= $_GET["id"]; ?>">
-    <input type="email" name="email" placeholder="Your email" value="<?= $emailValue; ?>"/>
-    <input type="password" name="password" placeholder="Password" value="<?= $passwordValue; ?>">
+    <input type="text" name="spz" placeholder="spz" value="<?= $emailValue; ?>"/>
+    <input type="text" name="nazev" placeholder="nazev" value="<?= $passwordValue; ?>">
     <input type="submit" name="isSubmitted" value="yes">
 </form>

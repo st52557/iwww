@@ -3,8 +3,8 @@ $errorFeedbacks = array();
 $successFeedback = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if (empty($_POST["username"])) {
-        $feedbackMessage = "username is required";
+    if (empty($_POST["email"])) {
+        $feedbackMessage = "email is required";
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
@@ -13,17 +13,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
+    if ((preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $_POST['email']))) {
+    }else{
+        $feedbackMessage = "email zadán špatně";
+        array_push($errorFeedbacks, $feedbackMessage);
+    }
+
+
     if (empty($errorFeedbacks)) {
         //success
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $conn->prepare("INSERT INTO users (email, username, password, description, created)
-    VALUES (:email, :username, :password, :description, NOW())");
+        $stmt = $conn->prepare("INSERT INTO Uzivatele (email, password, vytvoreno)
+    VALUES (:email, :password, NOW())");
         $stmt->bindParam(':email', $_POST["email"]);
-        $stmt->bindParam(':username', $_POST["username"]);
         $stmt->bindParam(':password', $_POST["password"]);
-        $stmt->bindParam(':description', $_POST["description"]);
         $stmt->execute();
         $successFeedback = "User was added";
     }
@@ -56,10 +61,7 @@ if (!empty($errorFeedbacks)) {
 
     <form method="post">
         <input type="email" name="email" placeholder="Your email"/>
-        <input type="text" name="username" placeholder="Your username">
         <input type="password" name="password" placeholder="Password">
-        <label for="description-textarea">Description:</label>
-        <textarea name="description" id="description-textarea"></textarea>
         <input type="submit" name="isSubmitted" value="yes">
     </form>
 

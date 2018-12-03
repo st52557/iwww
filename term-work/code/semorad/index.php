@@ -54,9 +54,10 @@ $message = "Email address is needed!";
             <?php if (!empty($_SESSION["user_id"])) { ?>
             <li class="nav_right">   <a href="<?=BASE_URL . "?page=user/logout" ?>">Odhlásit</a></li>
             <li class="nav_right">   <a href="<?= BASE_URL . "?page=users" ?>">Účet</a></li>
+            <?php  if (($_SESSION["user_role"])=='a'){ ?>
             <li class="nav_right">   <a href="<?= BASE_URL . "?page=user/user-index" ?>">Databáze</a></li>
 
-            <?php } else { ?>
+            <?php }} else { ?>
             <li class="nav_right" onclick="document.getElementById('modal-wrapper').style.display='block'">
                 <a >Přihlásit se</a></li>
 
@@ -91,11 +92,9 @@ if( file_exists($file)) {
         </div>
 
         <div class="container">
-            <input type="text" placeholder="Enter Username" name="loginMail">
+            <input type="text" placeholder="Enter E-mail" name="loginMail">
             <input type="password" placeholder="Enter Password" name="loginPassword">
             <button type="submit">Login</button>
-            <input type="checkbox" style="margin:26px 30px;"> Remember me
-            <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
         </div>
 
     </form>
