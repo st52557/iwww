@@ -53,7 +53,9 @@ $message = "Email address is needed!";
 
             <?php if (!empty($_SESSION["user_id"])) { ?>
             <li class="nav_right">   <a href="<?=BASE_URL . "?page=user/logout" ?>">Odhlásit</a></li>
-            <li class="nav_right">   <a href="<?= BASE_URL . "?page=users" ?>">Účet</a></li>
+            <li class="nav_right">   <a href="<?= BASE_URL . "?page=auta/auta_add" ?>">Moje Auta</a></li>
+            <li class="nav_right">   <a href="<?=BASE_URL . "?page=zmena_hesla" ?>">Změna hesla</a></li>
+
             <?php  if (($_SESSION["user_role"])=='a'){ ?>
             <li class="nav_right">   <a href="<?= BASE_URL . "?page=user/user-index" ?>">Databáze</a></li>
 
@@ -87,13 +89,13 @@ if( file_exists($file)) {
 
         <div class="imgcontainer">
             <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <img src="1.png" alt="Avatar" class="avatar">
-            <h1 style="text-align:center">Modal Popup Box</h1>
+
+            <h1 style="text-align:center">Přihlášení</h1>
         </div>
 
         <div class="container">
-            <input type="text" placeholder="Enter E-mail" name="loginMail">
-            <input type="password" placeholder="Enter Password" name="loginPassword">
+            <input type="text" placeholder="Vložte Email" name="loginMail">
+            <input type="password" placeholder="Vložte heslo" name="loginPassword">
             <button type="submit">Login</button>
         </div>
 

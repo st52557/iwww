@@ -41,7 +41,7 @@ if (!empty($errorFeedbacks)) {
 ?>
 
 <?php
-if (empty($errorFeedbacks)) { //load data origin data from database
+if (empty($errorFeedbacks)) {
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT * FROM Uzivatele WHERE ID_Uzivatel = :id");
@@ -57,9 +57,13 @@ if (empty($errorFeedbacks)) { //load data origin data from database
 }
 ?>
 
+<div class="formular">
+
 <form method="post">
     <input type="hidden" name="id" value="<?= $_GET["id"]; ?>">
     <input type="email" name="email" placeholder="Your email" value="<?= $emailValue; ?>"/>
     <input type="password" name="password" placeholder="Password" value="<?= $passwordValue; ?>">
     <input type="submit" name="isSubmitted" value="yes">
 </form>
+
+</div>

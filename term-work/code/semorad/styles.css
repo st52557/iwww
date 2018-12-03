@@ -1,12 +1,12 @@
 body,html {
-
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     height: 100%;
     margin: 0;
-    background-color: lightgrey;
+    background-color: snow;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+
     font-size: 16px;
     color: #4a4a4a;
 }
@@ -62,7 +62,7 @@ header li a {
 #hero {
     height: 100%;
     background: url("img/back.jpg") no-repeat center;
-    background-color: grey;
+    background-color: #4a4a4a;
     background-size: cover;
     position: relative;
     text-align: center;
@@ -151,23 +151,60 @@ header li a {
     color: #333333;
 }
 
-.reg {
-    background-color: darkgrey;
-    margin-top: 10%;
-    margin-bottom: 20%;
-    text-align: center;
 
-    align-items: center;
-    justify-content: center;
-
-
+.formular{
+    text-align: center  ;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 10%;
 }
-.reg form{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
 
+.formular form input{
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formular form input[type=submit]{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tabulka_crud{
+
+
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+.tabulka_crud td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tabulka_crud tr:nth-child(even){background-color: #f2f2f2;}
+
+.tabulka_crud tr:hover {background-color: #ddd;}
+
+.tabulka_crud th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
 }
 
 footer {

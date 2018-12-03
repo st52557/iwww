@@ -968,7 +968,7 @@
     <foreign-key id="245" parent="230" name="Auto_Uzivatel_ID_Uzivatel_fk">
       <ColNames>ID_Uzivatele</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
-      <RefTableName>Uzivatel</RefTableName>
+      <RefTableName>Uzivatele</RefTableName>
       <RefColNames>ID_Uzivatel</RefColNames>
     </foreign-key>
     <column id="246" parent="231" name="ID_Faktura">
@@ -1000,7 +1000,7 @@
     <foreign-key id="251" parent="231" name="Faktura_Auto_ID_Auto_fk">
       <ColNames>ID_Auto</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
-      <RefTableName>Auto</RefTableName>
+      <RefTableName>Auta</RefTableName>
       <RefColNames>ID_Auto</RefColNames>
     </foreign-key>
     <column id="252" parent="232" name="ID_Oprava">
@@ -1064,7 +1064,7 @@
     <foreign-key id="263" parent="232" name="Oprava_Auto_ID_Auto_fk">
       <ColNames>ID_Auto</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
-      <RefTableName>Auto</RefTableName>
+      <RefTableName>Auta</RefTableName>
       <RefColNames>ID_Auto</RefColNames>
     </foreign-key>
     <foreign-key id="264" parent="232" name="Oprava_Faktura_ID_Faktura_fk">

@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':email', $_POST["email"]);
         $stmt->bindParam(':password', $_POST["password"]);
         $stmt->execute();
-        $successFeedback = "User was added";
+        $successFeedback = "Registrace proběhla úspěšně!";
     }
 }
 
@@ -47,7 +47,7 @@ if (!empty($errorFeedbacks)) {
 }
 ?>
 
-<div class="reg">
+<div class="formular">
 
     <h1>Registrace</h1>
 
@@ -60,9 +60,9 @@ if (!empty($errorFeedbacks)) {
     </p>
 
     <form method="post">
-        <input type="email" name="email" placeholder="Your email"/>
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" name="isSubmitted" value="yes">
+        <input type="email" name="email" placeholder="Váš Email"/>
+        <input type="password" name="password" placeholder="Heslo"/>
+        <input type="submit" name="isSubmitted" value="Potvrdit"/>
     </form>
 
 </div>

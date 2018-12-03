@@ -5,7 +5,8 @@ $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $data = $conn->query("SELECT * FROM Uzivatele")->fetchAll();
-echo '<table style="width:100%" border="1">';
+
+echo '<table class="tabulka_crud"';
 
 echo '  
   <tr>
@@ -27,7 +28,6 @@ foreach ($data as $row) {
     <td>
         <a href="?page=user/user-index&action=update&id='.$row["ID_Uzivatel"].'">U</a>
         <a href="?page=user/user-index&action=delete&id='.$row["ID_Uzivatel"].'">D</a>
-        <a href="?page=auta/auta_add&action=update&id='.$row["ID_Uzivatel"].'">Auta</a>
     </td>
   </tr >';
 
