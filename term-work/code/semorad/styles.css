@@ -1,0 +1,288 @@
+body,html {
+
+    height: 100%;
+    margin: 0;
+    background-color: lightgrey;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+
+
+header li a:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+
+}
+
+header ul {
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+}
+
+header li {
+    float: left;
+
+}
+
+header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav_right{
+    float:right;
+}
+
+#header-web-title {
+
+    color: white;
+    font-size: 30px;
+    margin: 1px;
+}
+
+
+#header-logo{
+    height: 20px;
+    margin-right: 20px;
+}
+
+#hero {
+    height: 100%;
+    background: url("img/back.jpg") no-repeat center;
+    background-color: grey;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#userss {
+    background-color: lightskyblue;
+    border-style: solid;
+    border-color: black;
+
+}
+
+#hero h1 {
+    font-size: 5em;
+}
+
+#hero a{
+    padding: 20px 40px;
+    background-color: white;
+    border-radius: 5px;
+    color: #4a4a4a;
+    border: 1px solid white;
+    transition: 1s;
+}
+
+#hero a:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.full-width-wrapper, main {
+    width: 960px;
+    margin: 0 auto;
+
+
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    text-align: left;
+    width: 280px;
+    min-height: 100px;
+    padding: 10px;
+    pargin: 5px;
+
+}
+.card > img {
+    height: 100px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #4a4a4a;
+
+}
+
+.card > p {
+    text-align: justify;
+
+}
+.card > a {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 1s;
+    border: 1px solid rgb(60,64,60);
+}
+
+.card >a:hover {
+    background-color: rgba(204,208,205,0.7);
+    color: #333333;
+}
+
+.reg {
+    background-color: darkgrey;
+    margin-top: 10%;
+    margin-bottom: 20%;
+    text-align: center;
+
+    align-items: center;
+    justify-content: center;
+
+
+}
+.reg form{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+footer {
+
+    margin-top: 20px;
+    min-height: 200px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #f2f2f2;
+
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+
+}
+
+#footer-newsletter input [type="submit"] {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Full-width input fields */
+.modal input[type=text], input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size:16px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 26px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    font-size:20px;
+}
+button:hover {
+    opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+.avatar {
+    width: 200px;
+    height:200px;
+    border-radius: 50%;
+}
+
+/* The Modal (background) */
+.modal {
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%;
+    padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
