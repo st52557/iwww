@@ -8,18 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
-    if (empty($_POST["pred_cena"])) {
+    if (empty($_POST["p_cena"])) {
         $feedbackMessage = "Předběžná cena is required";
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
-    if (empty($_POST["id_faktura"])) {
-        $feedbackMessage = "Číslo faktury is required";
-        array_push($errorFeedbacks, $feedbackMessage);
-    }
-
-    if (empty($_POST["skut_cena"])) {
-        $_POST["skut_cena"] = 0;
+    if (empty($_POST["sk_cena"])) {
+        $_POST["sk_cena"] = 0;
     }
 
     if (empty($errorFeedbacks)) {
@@ -31,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         SET Typ_opravy= :typ, Predbezna_cena= :p_cena, Skutecna_cena = :sk_cena  WHERE ID_Oprava = :id");
         $stmt->bindParam(':id', $_GET["id"]);
         $stmt->bindParam(':typ', $_POST["typ"]);
-        $stmt->bindParam(":p_cena", $_POST["pred_cena"]);
-        $stmt->bindParam(":sk_cena", $_POST["skut_cena"]);
+        $stmt->bindParam(":p_cena", $_POST["p_cena"]);
+        $stmt->bindParam(":sk_cena", $_POST["sk_cena"]);
         $stmt->execute();
         $successFeedback = "Oprava was updated";
     }
@@ -84,9 +79,9 @@ if (empty($errorFeedbacks)) { //load data origin data from database
 
     <form method="post">
         <input type="hidden" name="id" value="<?= $_GET["id"]; ?>">
-        <input type="text" name="typ" placeholder="spz" value="<?= $typValue; ?>"/>
-        <input type="text" name="p_cena" placeholder="nazev" value="<?= $p_cenaValue; ?>">
-        <input type="text" name="sk_cena" placeholder="nazev" value="<?= $sk_cenaValue; ?>">
+        <input type="text" name="typ" placeholder="Typ" value="<?= $typValue; ?>"/>
+        <input type="text" name="p_cena" placeholder="Předběžná cena" value="<?= $p_cenaValue; ?>">
+        <input type="text" name="sk_cena" placeholder="Skutečná cena" value="<?= $sk_cenaValue; ?>">
         <input type="submit" name="isSubmitted" value="Potvrdit změny">
     </form>
 

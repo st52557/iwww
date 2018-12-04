@@ -1,7 +1,8 @@
 <?php
 $errorFeedbacks = array();
 $successFeedback = "";
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+if(isset($_POST["isSubmitted"])){
 
     if (empty($_POST["typ"])) {
         $feedbackMessage = "Typ opravy is required";
@@ -24,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($errorFeedbacks)) {
 
-        $stav = 2;
+        $stav = 1;
 
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -39,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(":id_fakt", $_POST["id_faktura"]);
         $stmt->bindParam(":id_stav", $stav);
         $stmt->execute();
-        $successFeedback = "Auto was added";
+        $successFeedback = "Oprava was added";
     }
 }
 
@@ -90,12 +91,14 @@ if (!empty($errorFeedbacks)) {
 
 <?php
 
-if(isset($_POST["submit"]) or isset($_POST["submitFalse"])) {
+if(isset($_POST["submit"]) or isset($_POST["submitFalse"]) or isset($_POST["submitDone"])) {
 
     if(isset($_POST["submit"])){
         $stav = 2;  //schváleno
-    }else {
+    }else if(isset($_POST["submitFalse"])) {
         $stav = 4;  //zamítnuto
+    } else {
+        $stav = 3;  //dokonceno (admin)
     }
 
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
@@ -163,8 +166,16 @@ foreach ($stmt as $row) {
             
         ';  if ($mojeRole == 'a'){
             echo '
-        <a href="?page=opravy/opravy_update&id='.$row["ID_Auto"].'">Upravit (A)</a>
-        
+        <a href="?page=opravy/opravy_update&id='.$row["ID_Oprava"].'">Upravit (A)</a>
+          ';
+    ?>
+        <form method="post">
+    <input type="hidden" name="id_opravy" value="<?php echo $row["ID_Oprava"] ?>">
+    <input type="submit" name="submitDone" value="Dokončit">
+    </form>
+        <?php
+
+        echo '
         ';
          }
 
