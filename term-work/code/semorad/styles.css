@@ -189,13 +189,17 @@ header li a {
 
 
     border-collapse: collapse;
-    width: 100%;
-    
+    width: 80%;
+    alignment: center;
+    margin: 0px auto;
+    margin-bottom: 200px;
+
 }
 
 .tabulka_crud td, th {
     border: 1px solid #ddd;
     padding: 8px;
+
 }
 
 .tabulka_crud tr:nth-child(even){background-color: #f2f2f2;}
@@ -212,10 +216,10 @@ header li a {
 
 footer {
 
-    margin-top: 20px;
     min-height: 200px;
-    left: 0;
+    right: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     background-color: #333;
     color: #f2f2f2;

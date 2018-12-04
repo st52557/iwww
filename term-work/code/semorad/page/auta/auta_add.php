@@ -80,7 +80,7 @@ if (!empty($errorFeedbacks)) {
             <input type="text" name="spz" placeholder="spz"/>
             <input type="text" name="nazev" placeholder="Nazev">
             <input type="text" name="email" placeholder="E-mail majitele">
-            <input type="submit" name="isSubmitted" value="yes">
+            <input type="submit" name="isSubmitted" value="Přidat auto">
         </form>
 
     </div>

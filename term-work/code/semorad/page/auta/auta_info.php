@@ -2,11 +2,13 @@
 
 <?php
 
-echo $_POST["id_opravy"];
+if(isset($_POST["submit"]) or isset($_POST["submitFalse"])) {
 
-if(isset($_POST["submit"])) {
-
-    $stav = 2;
+    if(isset($_POST["submit"])){
+        $stav = 2;  //schváleno
+    }else {
+        $stav = 4;  //zamítnuto
+    }
 
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -39,7 +41,6 @@ echo '
   <tr>
     <th>Typ Opravy</th>
     <th>Předběžná cena</th> 
-    <th>Schváleno</th>
     <th>Skutečná cena</th>
     <th>Stav</th>
     <th>Akce</th>
@@ -51,36 +52,33 @@ foreach ($stmt as $row) {
    <tr >
     <td >' . $row["Typ_opravy"] . '</td>
     <td >' . $row["Predbezna_cena"] . '</td >
-    <td >' . $row["Schvaleno"] . '</td > 
     <td >' . $row["Skutecna_cena"] . '</td > 
     <td >' . $row["Typ_stavu"] . '</td > 
     <td>
         
         
         ';
-
-    echo $row["ID_Oprava"];
-    echo $_POST["id_opravy"];
-
     ?>
 
 
     <form method="post">
 
-    <input type="hidden" name="id_opravy" value="<?php $row["ID_Oprava"] ?>">
-    <input type="submit" name="submit" >
+    <input type="hidden" name="id_opravy" value="<?php echo $row["ID_Oprava"] ?>">
+    <input type="submit" name="submit" value="Schválit">
+    <input type="submit" name="submitFalse" value="Zamítnout">
     </form>
     <?php
 
-
-
         echo '
-        
-        
-        
-        <?php if ($mojeRole == \'a\'){ ?>
+            
+        ';  if ($mojeRole == 'a'){
+            echo '
         <a href="?page=auta/auta-index&action=delete&id='.$row["ID_Auto"].'">Upravit (A)</a>
-        <?php } ?>
+        
+        ';
+         }
+
+         echo '
     </td>
   </tr >';
 
