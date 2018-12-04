@@ -59,11 +59,12 @@ if (empty($errorFeedbacks)) {
 
 <div class="formular">
 
+
 <form method="post">
     <input type="hidden" name="id" value="<?= $_GET["id"]; ?>">
     <input type="email" name="email" placeholder="Your email" value="<?= $emailValue; ?>"/>
     <input type="password" name="password" placeholder="Password" value="<?= $passwordValue; ?>">
-    <input type="submit" name="isSubmitted" value="yes">
+    <input type="submit" name="isSubmitted" value="Potvrdit">
 </form>
 
 </div>

@@ -1,8 +1,8 @@
 
 <section id="hero">
     <div>
-        <h1>Opravy všeho druhu</h1>
-        <a href="#">Ukaž více</a>
+        <h1>Ani trochu Honzovo</h1>
+        <a href="#">Tohle tlačítko nic nedělá</a>
     </div>
 </section>
 

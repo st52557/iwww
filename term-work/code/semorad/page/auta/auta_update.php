@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $stmt = $conn->prepare("UPDATE Auta 
-        SET SPZ= :spz, Nazev= :nazev  WHERE ID_Auta = :id");
+        SET SPZ= :spz, Nazev= :nazev  WHERE ID_Auto = :id");
         $stmt->bindParam(':id', $_POST["id"]);
         $stmt->bindParam(':spz', $_POST["spz"]);
         $stmt->bindParam(':nazev', $_POST["nazev"]);
@@ -39,22 +39,37 @@ if (!empty($errorFeedbacks)) {
 if (empty($errorFeedbacks)) { //load data origin data from database
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM Auta WHERE ID_Uzivatel = :id");
+    $stmt = $conn->prepare("SELECT * FROM Auta WHERE ID_Auto = :id");
     $stmt->bindParam(':id', $_GET["id"]);
     $stmt->execute();
     $user = $stmt->fetch();
 
-    $emailValue = $user["email"];
-    $passwordValue = $user["password"];
+    $spzValue = $user["Spz"];
+    $nazevValue = $user["Nazev"];
 } else { //in case of any error, load data
-    $emailValue = $_POST["email"];
-    $passwordValue = $_POST["password"];
+    $spzValue = $_POST["Spz"];
+    $nazevValue = $_POST["Nazev"];
 }
 ?>
 
-<form method="post">
+<div class="formular">
+
+    <h2>Úprava auta</h2>
+
+    <p style="font-size: xx-large;background-color: red">
+        <?php echo $errorFeedback ?>
+    </p>
+
+    <p style="font-size: xx-large;background-color: lightskyblue">
+        <?php echo $successFeedback ?>
+    </p>
+
+
+    <form method="post">
     <input type="hidden" name="id" value="<?= $_GET["id"]; ?>">
-    <input type="text" name="spz" placeholder="spz" value="<?= $emailValue; ?>"/>
-    <input type="text" name="nazev" placeholder="nazev" value="<?= $passwordValue; ?>">
-    <input type="submit" name="isSubmitted" value="yes">
+    <input type="text" name="spz" placeholder="spz" value="<?= $spzValue; ?>"/>
+    <input type="text" name="nazev" placeholder="nazev" value="<?= $nazevValue; ?>">
+    <input type="submit" name="isSubmitted" value="Potvrdit">
 </form>
+
+</div>

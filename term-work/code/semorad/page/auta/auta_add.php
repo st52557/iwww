@@ -127,9 +127,9 @@ foreach ($stmt as $row) {
     <td >' . $row["Nazev"] . '</td > 
     <td >' . $row["ID_Uzivatele"] . '</td > 
     <td>
-        <a href="?page=auta/auta_info&id='.$row["ID_Auto"].'">Podrobnosti</a>
+        <a href="?page=auta/auta_info&id='.$row["ID_Auto"].'&spz='.$row["Spz"].'">Podrobnosti</a>
         <a href="?page=auta/auta_index&action=update&id='.$row["ID_Auto"].'">U</a>
-        <a href="?page=auta/auta-index&action=delete&id='.$row["ID_Auto"].'">D</a>
+        <a href="?page=auta/auta_index&action=delete&id='.$row["ID_Auto"].'">D</a>
 
     </td>
   </tr >';
