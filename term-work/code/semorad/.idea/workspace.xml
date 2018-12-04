@@ -4,8 +4,9 @@
     <list default="true" id="b916381b-2322-4ad7-9994-fc102d48b0e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page/auta/auta_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/auta/auta_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/auta/auta_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/auta/auta_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/auta/auta_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/opravy/opravy_add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/opravy/opravy_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/opravy/opravy_update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/opravy/orpavy_add.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,26 +93,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="SCHEMA:autoservis" value="5" />
+          <entry key="SCHEMA:autoservis" value="6" />
           <entry key="auta" value="1" />
           <entry key="auto" value="1" />
+          <entry key="auto_uzivatel_id_uzivatel_fk" value="1" />
           <entry key="css" value="4" />
-          <entry key="faktura" value="1" />
-          <entry key="oprava" value="6" />
-          <entry key="php" value="66" />
+          <entry key="faktura" value="3" />
+          <entry key="oprava" value="8" />
+          <entry key="php" value="73" />
           <entry key="sql" value="1" />
           <entry key="stav_obednavky" value="1" />
-          <entry key="stav_opravy" value="4" />
+          <entry key="stav_opravy" value="5" />
           <entry key="uzivatele" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="Database Element" value="19" />
-          <entry key="PHP" value="66" />
+          <entry key="Database Element" value="24" />
+          <entry key="PHP" value="73" />
+          <entry key="SQL" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="UML" value="6" />
+          <entry key="UML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -119,7 +122,7 @@
           <entry key="cell" value="296" />
           <entry key="css" value="313" />
           <entry key="dummy" value="11" />
-          <entry key="php" value="3835" />
+          <entry key="php" value="4660" />
           <entry key="sql" value="135" />
           <entry key="txt" value="89" />
         </counts>
@@ -127,8 +130,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="313" />
-          <entry key="HTML" value="21" />
-          <entry key="PHP" value="3783" />
+          <entry key="HTML" value="23" />
+          <entry key="PHP" value="4606" />
           <entry key="PLAIN_TEXT" value="100" />
           <entry key="SQL" value="166" />
           <entry key="Scratch" value="296" />
@@ -138,27 +141,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/opravy/opravy_add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="37" column="58" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="37" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/page/auta/auta_add.php">
+        <entry file="file://$PROJECT_DIR$/page/opravy/opravy_update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="82" column="70" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+            <state relative-caret-position="1224">
+              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/auta/auta_info.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        <entry file="uml://DATABASE/dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis</OriginalElement>
+              <nodes>
+                <node x="57.0" y="358.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.stav_opravy</node>
+                <node x="104.95238095238093" y="0.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele</node>
+                <node x="274.0" y="526.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta</node>
+                <node x="38.28571428571428" y="482.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava</node>
+                <node x="251.0" y="358.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura</node>
+                <node x="109.95238095238093" y="190.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura">
+                  <point x="0.0" y="-59.0" />
+                  <point x="37.5" y="37.0" />
+                </edge>
+                <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura">
+                  <point x="59.666666666666686" y="-103.0" />
+                  <point x="187.45238095238096" y="457.0" />
+                  <point x="288.5" y="457.0" />
+                  <point x="-37.5" y="37.0" />
+                </edge>
+                <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele">
+                  <point x="0.0" y="-59.0" />
+                  <point x="0.0" y="70.0" />
+                </edge>
+                <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta">
+                  <point x="-59.66666666666666" y="-103.0" />
+                  <point x="68.11904761904762" y="457.0" />
+                  <point x="46.5" y="457.0" />
+                  <point x="46.5" y="333.0" />
+                  <point x="149.45238095238093" y="333.0" />
+                  <point x="-39.5" y="59.0" />
+                </edge>
+                <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.stav_opravy">
+                  <point x="0.0" y="-103.0" />
+                  <point x="127.78571428571428" y="457.0" />
+                  <point x="144.0" y="457.0" />
+                  <point x="0.0" y="37.0" />
+                </edge>
+                <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta">
+                  <point x="0.0" y="-37.0" />
+                  <point x="326.0" y="333.0" />
+                  <point x="228.45238095238093" y="333.0" />
+                  <point x="39.5" y="59.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.9562146892655368" x="-69.45864106351547" y="240.98966026587885" />
+              <SelectedNodes>
+                <node>dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/opravy/opravy_delete.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -198,8 +259,10 @@
         <option value="$PROJECT_DIR$/page/auta/auta_update.php" />
         <option value="$PROJECT_DIR$/page/user/user-update.php" />
         <option value="$PROJECT_DIR$/page/auta/auta_info.php" />
-        <option value="$PROJECT_DIR$/page/auta/auta_add.php" />
         <option value="$PROJECT_DIR$/styles.css" />
+        <option value="$PROJECT_DIR$/page/auta/auta_add.php" />
+        <option value="$PROJECT_DIR$/page/opravy/opravy_add.php" />
+        <option value="$PROJECT_DIR$/page/opravy/opravy_update.php" />
       </list>
     </option>
   </component>
@@ -263,6 +326,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lukáš\Desktop\iwww\simple-docker-web-dev-environment-master\www\iwww\term-work\code\semorad\page\opravy" />
       <recent name="C:\Users\Lukáš\Desktop\iwww\simple-docker-web-dev-environment-master\www\iwww\term-work\code\semorad\page\auta" />
       <recent name="C:\Users\Lukáš\Desktop\iwww\simple-docker-web-dev-environment-master\www\iwww\term-work\code\semorad\page" />
     </key>
@@ -292,12 +356,12 @@
       <workItem from="1543827989567" duration="575000" />
       <workItem from="1543833602202" duration="19718000" />
       <workItem from="1543908956613" duration="8242000" />
-      <workItem from="1543949176246" duration="2837000" />
+      <workItem from="1543949176246" duration="6729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31372000" />
+    <option name="totallyTimeSpent" value="35264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -363,13 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/faktura">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/auta">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -418,13 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/oprava">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/auta/auta_delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -445,81 +495,6 @@
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/auta/auta_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis</OriginalElement>
-          <nodes>
-            <node x="-97.25849335302803" y="325.5805022156573">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.stav_opravy</node>
-            <node x="189.3571428571429" y="0.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele</node>
-            <node x="283.1904761904762" y="526.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta</node>
-            <node x="84.1904761904762" y="482.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava</node>
-            <node x="260.1904761904762" y="358.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura</node>
-            <node x="194.3571428571429" y="190.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura">
-              <point x="0.0" y="-59.0" />
-              <point x="37.5" y="37.0" />
-            </edge>
-            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura">
-              <point x="59.666666666666686" y="-103.0" />
-              <point x="233.3571428571429" y="457.0" />
-              <point x="297.6904761904762" y="457.0" />
-              <point x="-37.5" y="37.0" />
-            </edge>
-            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele">
-              <point x="0.0" y="-59.0" />
-              <point x="0.0" y="70.0" />
-            </edge>
-            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta">
-              <point x="0.0" y="-103.0" />
-              <point x="173.6904761904762" y="457.0" />
-              <point x="184.50000000000003" y="457.0" />
-              <point x="184.50000000000003" y="333.0" />
-              <point x="233.8571428571429" y="333.0" />
-              <point x="-39.5" y="59.0" />
-            </edge>
-            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.stav_opravy">
-              <point x="-59.66666666666666" y="-103.0" />
-              <point x="114.02380952380955" y="457.0" />
-              <point x="87.0" y="457.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta">
-              <point x="0.0" y="-37.0" />
-              <point x="335.1904761904762" y="333.0" />
-              <point x="312.8571428571429" y="333.0" />
-              <point x="39.5" y="59.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.9562146892655368" x="-64.0" y="241.0" />
-          <SelectedNodes>
-            <node>dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.stav_opravy</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/opravy/opravy_index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/opravy/orpavy_add.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/page/opravy/opravy_add.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -552,13 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/stav_opravy">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
@@ -583,17 +551,126 @@
     <entry file="file://$PROJECT_DIR$/page/opravy/opravy_delete.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/auta/auta_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/page/opravy/orpavy_add.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/page/auta/auta_add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="82" column="70" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+        <state relative-caret-position="-1717">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/stav_opravy">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/oprava">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/auta/index/auto_uzivatel_id_uzivatel_fk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/faktura">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/auta/auta_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis</OriginalElement>
+          <nodes>
+            <node x="57.0" y="358.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.stav_opravy</node>
+            <node x="104.95238095238093" y="0.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele</node>
+            <node x="274.0" y="526.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta</node>
+            <node x="38.28571428571428" y="482.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava</node>
+            <node x="251.0" y="358.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura</node>
+            <node x="109.95238095238093" y="190.0">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura">
+              <point x="0.0" y="-59.0" />
+              <point x="37.5" y="37.0" />
+            </edge>
+            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura">
+              <point x="59.666666666666686" y="-103.0" />
+              <point x="187.45238095238096" y="457.0" />
+              <point x="288.5" y="457.0" />
+              <point x="-37.5" y="37.0" />
+            </edge>
+            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele">
+              <point x="0.0" y="-59.0" />
+              <point x="0.0" y="70.0" />
+            </edge>
+            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta">
+              <point x="-59.66666666666666" y="-103.0" />
+              <point x="68.11904761904762" y="457.0" />
+              <point x="46.5" y="457.0" />
+              <point x="46.5" y="333.0" />
+              <point x="149.45238095238093" y="333.0" />
+              <point x="-39.5" y="59.0" />
+            </edge>
+            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.stav_opravy">
+              <point x="0.0" y="-103.0" />
+              <point x="127.78571428571428" y="457.0" />
+              <point x="144.0" y="457.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Faktura" target="dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta">
+              <point x="0.0" y="-37.0" />
+              <point x="326.0" y="333.0" />
+              <point x="228.45238095238093" y="333.0" />
+              <point x="39.5" y="59.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9562146892655368" x="-69.45864106351547" y="240.98966026587885" />
+          <SelectedNodes>
+            <node>dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/opravy/opravy_index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/opravy/opravy_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="37" column="58" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="37" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/opravy/opravy_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>

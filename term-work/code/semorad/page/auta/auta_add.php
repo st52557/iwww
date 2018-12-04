@@ -89,6 +89,8 @@ if (!empty($errorFeedbacks)) {
 
 
 <?php
+//crud tabulka
+
 $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -127,7 +129,7 @@ foreach ($stmt as $row) {
     <td >' . $row["Nazev"] . '</td > 
     <td >' . $row["ID_Uzivatele"] . '</td > 
     <td>
-        <a href="?page=auta/auta_info&id='.$row["ID_Auto"].'&spz='.$row["Spz"].'">Podrobnosti</a>
+        <a href="?page=opravy/opravy_add&id='.$row["ID_Auto"].'&spz='.$row["Spz"].'">Podrobnosti</a>
         <a href="?page=auta/auta_index&action=update&id='.$row["ID_Auto"].'">U</a>
         <a href="?page=auta/auta_index&action=delete&id='.$row["ID_Auto"].'">D</a>
 
