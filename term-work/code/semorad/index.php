@@ -55,9 +55,10 @@ $message = "Email address is needed!";
             <li class="nav_right">   <a href="<?=BASE_URL . "?page=user/logout" ?>">Odhlásit</a></li>
             <li class="nav_right">   <a href="<?= BASE_URL . "?page=auta/auta_add" ?>">Moje Auta</a></li>
             <li class="nav_right">   <a href="<?=BASE_URL . "?page=zmena_hesla" ?>">Změna hesla</a></li>
+            <li class="nav_right">   <a href="<?=BASE_URL . "?page=faktury/faktury_add" ?>">Faktury</a></li>
 
             <?php  if (($_SESSION["user_role"])=='a'){ ?>
-            <li class="nav_right">   <a href="<?= BASE_URL . "?page=user/user-index" ?>">Databáze</a></li>
+            <li class="nav_right">   <a href="<?= BASE_URL . "?page=user/user-index" ?>">Uživatelé</a></li>
 
             <?php }} else { ?>
             <li class="nav_right" onclick="document.getElementById('modal-wrapper').style.display='block'">

@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(":sk_cena", $_POST["sk_cena"]);
         $stmt->execute();
         $successFeedback = "Oprava was updated";
+        //přesměrování zpět na opravy ? header?
     }
 }
 ?>
