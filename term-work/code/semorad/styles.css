@@ -195,6 +195,16 @@ header li a {
     box-sizing: border-box;
 }
 
+.formular form textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 .tabulka_crud{
 
 
@@ -206,9 +216,30 @@ header li a {
 
 }
 
+.tabulka_crud input{
+
+margin-top: 7px;
+font-size: small;
+
+}
+
 .tabulka_crud td, th {
     border: 1px solid #ddd;
     padding: 8px;
+
+}
+
+.tabulka_crud a{
+   text-decoration: none;
+    color: #333333;
+    background-color: #dddddd;
+    border: #cccccc 2px solid;
+    padding: 2px;
+}
+
+.tabulka_crud a:hover{
+    cursor: pointer;
+    background-color: lightblue;
 
 }
 

@@ -990,9 +990,8 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="251" parent="231" name="Faktura_ID_Auto_uindex">
+    <index id="251" parent="231" name="Faktura_Auta_ID_Auto_fk">
       <ColNames>ID_Auto</ColNames>
-      <Unique>1</Unique>
       <Type>btree</Type>
     </index>
     <index id="252" parent="231" name="Faktura_Stav_faktury_ID_Stav_faktury_fk">
@@ -1004,273 +1003,279 @@
       <ColNames>ID_Faktura</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="254" parent="231" name="Faktura_ID_Auto_uindex">
-      <ColNames>ID_Auto</ColNames>
-      <UnderlyingIndexName>Faktura_ID_Auto_uindex</UnderlyingIndexName>
-    </key>
-    <foreign-key id="255" parent="231" name="Faktura_Auto_ID_Auto_fk">
+    <foreign-key id="254" parent="231" name="Faktura_Auta_ID_Auto_fk">
       <ColNames>ID_Auto</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
       <RefTableName>Auta</RefTableName>
       <RefColNames>ID_Auto</RefColNames>
     </foreign-key>
-    <foreign-key id="256" parent="231" name="Faktura_Stav_faktury_ID_Stav_faktury_fk">
+    <foreign-key id="255" parent="231" name="Faktura_Stav_faktury_ID_Stav_faktury_fk">
       <ColNames>ID_Stav_faktury</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
       <RefTableName>Stav_faktury</RefTableName>
       <RefColNames>ID_Stav_faktury</RefColNames>
     </foreign-key>
-    <column id="257" parent="232" name="ID_Oprava">
+    <column id="256" parent="232" name="ID_Oprava">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="232" name="Typ_opravy">
+    <column id="257" parent="232" name="Typ_opravy">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="232" name="Predbezna_cena">
+    <column id="258" parent="232" name="Predbezna_cena">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="232" name="Skutecna_cena">
+    <column id="259" parent="232" name="Skutecna_cena">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="232" name="Schvaleno">
+    <column id="260" parent="232" name="Schvaleno">
       <Position>5</Position>
       <DataType>tinyint(1)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="232" name="ID_Auto">
+    <column id="261" parent="232" name="ID_Auto">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="232" name="ID_Faktura">
+    <column id="262" parent="232" name="ID_Faktura">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="232" name="ID_Stav_opravy">
+    <column id="263" parent="232" name="ID_Stav_opravy">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="265" parent="232" name="Oprava_Auto_ID_Auto_fk">
+    <index id="264" parent="232" name="Oprava_Auto_ID_Auto_fk">
       <ColNames>ID_Auto</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="266" parent="232" name="Oprava_Faktura_ID_Faktura_fk">
+    <index id="265" parent="232" name="Oprava_Faktura_ID_Faktura_fk">
       <ColNames>ID_Faktura</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="267" parent="232" name="Oprava_stav_opravy_ID_Stav_opravy_fk">
+    <index id="266" parent="232" name="Oprava_stav_opravy_ID_Stav_opravy_fk">
       <ColNames>ID_Stav_opravy</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="268" parent="232" name="PRIMARY">
+    <key id="267" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_Oprava</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="269" parent="232" name="Oprava_Auto_ID_Auto_fk">
+    <foreign-key id="268" parent="232" name="Oprava_Auto_ID_Auto_fk">
       <ColNames>ID_Auto</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
       <RefTableName>Auta</RefTableName>
       <RefColNames>ID_Auto</RefColNames>
     </foreign-key>
-    <foreign-key id="270" parent="232" name="Oprava_Faktura_ID_Faktura_fk">
+    <foreign-key id="269" parent="232" name="Oprava_Faktura_ID_Faktura_fk">
       <ColNames>ID_Faktura</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
       <RefTableName>Faktura</RefTableName>
       <RefColNames>ID_Faktura</RefColNames>
     </foreign-key>
-    <foreign-key id="271" parent="232" name="Oprava_stav_opravy_ID_Stav_opravy_fk">
+    <foreign-key id="270" parent="232" name="Oprava_stav_opravy_ID_Stav_opravy_fk">
       <ColNames>ID_Stav_opravy</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
       <RefTableName>stav_opravy</RefTableName>
       <RefColNames>ID_Stav_opravy</RefColNames>
     </foreign-key>
-    <column id="272" parent="233" name="ID_Predani_auta">
+    <column id="271" parent="233" name="ID_Predani_auta">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="233" name="Komentar">
+    <column id="272" parent="233" name="Komentar">
       <Position>2</Position>
-      <DataType>varchar(256)|0s</DataType>
+      <DataType>varchar(512)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="233" name="Potvrzeno">
+    <column id="273" parent="233" name="Potvrzeno">
       <Position>3</Position>
-      <DataType>tinyint(1)|0s</DataType>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DataType>varchar(6)|0s</DataType>
+      <DefaultExpression>&apos;ne&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="233" name="ID_Faktura">
+    <column id="274" parent="233" name="ID_Faktura">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="276" parent="233" name="Predani_auta_Faktura_ID_Faktura_fk">
+    <column id="275" parent="233" name="Cas_vystaveni">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="276" parent="233" name="Cas_potvrzeni">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="277" parent="233" name="Predani_auta_Faktura_ID_Faktura_fk">
       <ColNames>ID_Faktura</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="277" parent="233" name="PRIMARY">
+    <key id="278" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_Predani_auta</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="278" parent="233" name="Predani_auta_Faktura_ID_Faktura_fk">
+    <foreign-key id="279" parent="233" name="Predani_auta_Faktura_ID_Faktura_fk">
       <ColNames>ID_Faktura</ColNames>
       <RefSchemaName>autoservis</RefSchemaName>
       <RefTableName>Faktura</RefTableName>
       <RefColNames>ID_Faktura</RefColNames>
     </foreign-key>
-    <column id="279" parent="234" name="ID_Stav_faktury">
+    <column id="280" parent="234" name="ID_Stav_faktury">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="234" name="Stav_faktury">
+    <column id="281" parent="234" name="Stav_faktury">
       <Position>2</Position>
       <DataType>varchar(48)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="281" parent="234" name="PRIMARY">
+    <key id="282" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_Stav_faktury</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="282" parent="235" name="email">
+    <column id="283" parent="235" name="email">
       <Position>1</Position>
       <DataType>varchar(48)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="235" name="ID_Uzivatel">
+    <column id="284" parent="235" name="ID_Uzivatel">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="235" name="password">
+    <column id="285" parent="235" name="password">
       <Position>3</Position>
       <DataType>varchar(48)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="235" name="role">
+    <column id="286" parent="235" name="role">
       <Position>4</Position>
       <DataType>char(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;u&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="235" name="Vytvoreno">
+    <column id="287" parent="235" name="Vytvoreno">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="235" name="PRIMARY">
+    <key id="288" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_Uzivatel</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="288" parent="236" name="ID_Stav_opravy">
+    <column id="289" parent="236" name="ID_Stav_opravy">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="236" name="Typ_stavu">
+    <column id="290" parent="236" name="Typ_stavu">
       <Position>2</Position>
       <DataType>varchar(48)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="290" parent="236" name="PRIMARY">
+    <key id="291" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_Stav_opravy</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="291" parent="237" name="id">
+    <column id="292" parent="237" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="237" name="email">
+    <column id="293" parent="237" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="237" name="created">
+    <column id="294" parent="237" name="created">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="294" parent="237" name="PRIMARY">
+    <key id="295" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="295" parent="238" name="id">
+    <column id="296" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="238" name="username">
+    <column id="297" parent="238" name="username">
       <Position>2</Position>
       <DataType>varchar(63)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="238" name="password">
+    <column id="298" parent="238" name="password">
       <Position>3</Position>
       <DataType>varchar(63)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="238" name="email">
+    <column id="299" parent="238" name="email">
       <Position>4</Position>
       <DataType>varchar(63)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="238" name="created">
+    <column id="300" parent="238" name="created">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="238" name="description">
+    <column id="301" parent="238" name="description">
       <Position>6</Position>
       <DataType>varchar(127)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="301" parent="238" name="PRIMARY">
+    <key id="302" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

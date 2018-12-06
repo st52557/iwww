@@ -41,6 +41,7 @@ if(isset($_POST["isSubmitted"])){
         $stmt->bindParam(":id_stav", $stav);
         $stmt->execute();
         $successFeedback = "Oprava was added";
+
     }
 }
 
@@ -56,6 +57,32 @@ if (!empty($errorFeedbacks)) {
     echo $successFeedback;
 }
 ?>
+
+
+<?php //vybere faktury do combo boxu - nedokončené, a platné k danému autu
+
+$stavFaktury = 1;  //stav faktury - nedokončeno
+
+
+
+$conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$stmt = $conn->prepare("SELECT ID_Faktura,ID_Stav_faktury,ID_Auto FROM autoservis.Faktura 
+                                 WHERE ID_Auto = :id_auta AND ID_Stav_faktury = :id_stav");
+
+
+$stmt->bindParam(":id_auta", $_GET["id"]);
+$stmt->bindParam(":id_stav", $stavFaktury);
+$stmt->execute();
+
+foreach ($stmt as $row) {
+    $option .= '<option value = "'.$row['ID_Faktura'].'">'.$row['ID_Faktura'].'</option>';
+}
+
+?>
+
+
 
 <?php  if (($_SESSION["user_role"])=='a'){ ?>
 
@@ -73,18 +100,20 @@ if (!empty($errorFeedbacks)) {
 
         <form method="post">
             <input type="text" name="typ" placeholder="Typ opravy"/>
-            <input type="text" name="pred_cena" placeholder="Predběžná cena">
-            <input type="text" name="skut_cena" placeholder="Skutečná cena">
-            <input type="text" name="id_faktura" placeholder="Cislo faktury">
+            <input type="text" name="pred_cena" placeholder="Predběžná cena"/>
+            <input type="text" name="skut_cena" placeholder="Skutečná cena"/>
 
-            <input type="submit" name="isSubmitted" value="Přidat opravu">
+            <select name="id_faktura">
+                <option value="" disabled selected hidden>Vyberte č. faktury</option>
+                <?php echo $option; ?>
+            </select>
+
+            <input type="submit" name="isSubmitted" value="Přidat opravu"/>
         </form>
 
     </div>
 
 <?php } ?>
-
-
 
 
 <h2 style="text-align: center">Opravy u auta <?php echo $_GET["spz"] ?></h2>

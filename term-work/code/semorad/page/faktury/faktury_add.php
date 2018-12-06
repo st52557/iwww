@@ -51,9 +51,6 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $stmt = $conn->prepare("SELECT Spz,ID_Auto FROM autoservis.Auta");
 
-
-$stmt->bindParam(":id_fakt", $_POST["id_auta"]);
-$stmt->bindParam(":id_stav", $stav);
 $stmt->execute();
 
 foreach ($stmt as $row) {
@@ -98,22 +95,22 @@ foreach ($stmt as $row) {
 
 <?php
 
-if(isset($_POST["submit"]) or isset($_POST["submitFalse"]) or isset($_POST["submitDone"])) {
+if(isset($_POST["submitDone"]) or isset($_POST["submitVystavit"]) or isset($_POST["submitFalse"])) {
 
-    if(isset($_POST["submit"])){
-        $stav = 2;  //schváleno
-    }else if(isset($_POST["submitFalse"])) {
-        $stav = 4;  //zamítnuto
+    if(isset($_POST["submitVystavit"])){
+        $stav = 2;  //faktura vystavena
+    }else if(isset($_POST["submitDone"])) {
+        $stav = 3;  //zaplacena
     } else {
-        $stav = 3;  //dokonceno (admin)
+        $stav = 4;  //storno
     }
 
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare("UPDATE Oprava SET ID_Stav_Opravy=:stav WHERE ID_Oprava=:id");
+    $stmt = $conn->prepare("UPDATE autoservis.Faktura SET ID_Stav_faktury = :stav WHERE ID_Faktura = :id");
 
-    $stmt->bindParam(":id", $_POST["id_opravy"]);
+    $stmt->bindParam(":id", $_POST["id_faktury"]);
     $stmt->bindParam(":stav", $stav);
 
     $stmt->execute();
@@ -153,6 +150,8 @@ if ($mojeRole == 'a'){
 
 
 
+
+
 echo '<table class="tabulka_crud">';
 
 echo '  
@@ -179,31 +178,21 @@ foreach ($stmt as $row) {
          <a href="?page=faktury/faktura_info&id_faktury='.$row["ID_Faktura"].'">Podrobnosti</a>
         
         ';
-    ?>
 
-
-
-    <form method="post">
-
-        <input type="hidden" name="id_opravy" value="<?php echo $row["ID_Oprava"] ?>">
-        <input type="submit" name="submit" value="Schválit">
-        <input type="submit" name="submitFalse" value="Zamítnout">
-    </form>
-    <?php
-
-    echo '
-            
-        ';  if ($mojeRole == 'a'){
+ if ($mojeRole == 'a'){
         echo '
         <a href="?page=opravy/opravy_update&id='.$row["ID_Oprava"].'">Upravit (A)</a>
         
           ';
         ?>
 
-        <form method="post">
-            <input type="hidden" name="id_opravy" value="<?php echo $row["ID_Oprava"] ?>">
-            <input type="submit" name="submitDone" value="Dokončit">
-        </form>
+     <form method="post">
+
+         <input type="hidden" name="id_faktury" value="<?php echo $row["ID_Faktura"] ?>">
+         <input type="submit" name="submitVystavit" value="Vystavit">
+         <input type="submit" name="submitDone" value="Zaplaceno">
+         <input type="submit" name="submitFalse" value="Storno">
+     </form>
         <?php
 
         echo '
