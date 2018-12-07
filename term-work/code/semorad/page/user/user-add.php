@@ -22,13 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($errorFeedbacks)) {
         //success
+
+        $hashedPass = hash('sha512',$_POST["password"]);
+
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $stmt = $conn->prepare("INSERT INTO Uzivatele (email, password, vytvoreno)
     VALUES (:email, :password, NOW())");
         $stmt->bindParam(':email', $_POST["email"]);
-        $stmt->bindParam(':password', $_POST["password"]);
+        $stmt->bindParam(':password', $hashedPass);
         $stmt->execute();
         $successFeedback = "Registrace proběhla úspěšně!";
     }

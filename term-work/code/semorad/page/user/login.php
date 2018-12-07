@@ -5,13 +5,16 @@ $Message = "";
 $ErrMessage = "";
 
 if (!empty($_POST) && !empty($_POST["loginMail"]) && !empty($_POST["loginPassword"])) {
+
+    $hashedPass = hash('sha512',$_POST["loginPassword"]);
+
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmt = $conn->prepare("SELECT ID_Uzivatel, email, password, role
                                      FROM Uzivatele WHERE email= :email and password = :password");
     $stmt->bindParam(':email', $_POST["loginMail"]);
-    $stmt->bindParam(':password', $_POST["loginPassword"]);
+    $stmt->bindParam(':password', $hashedPass);
     $stmt->execute();
 
     $user = $stmt->fetch();
