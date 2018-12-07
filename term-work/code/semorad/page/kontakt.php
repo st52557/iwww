@@ -1,75 +1,81 @@
-<!-- itnetwork.cz/php/zaklady/zaklady-php-kontaktni-emailovy-formular-->
-<?php
-mb_internal_encoding("UTF-8");
-
-$errorHlaska = '';
-$successHlaska = '';
 
 
-if ($_POST)
-{
-    if (isset($_POST['jmeno']) && $_POST['jmeno'] &&
-        isset($_POST['email']) && $_POST['email'] &&
-        isset($_POST['zprava']) && $_POST['zprava'])
-    {
-        $hlavicka = 'From:' . $_POST['email'];
-        $hlavicka .= "\nMIME-Version: 1.0\n";
-        $hlavicka .= "Content-Type: text/html; charset=\"utf-8\"\n";
-        $adresa = 'nas@email.cz';
-        $predmet = 'Nová zpráva z mailformu';
-        $uspech = mb_send_mail($adresa, $predmet, $_POST['zprava'], $hlavicka);
-        if ($uspech)
-        {
-            $successHlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-        }
-        else
-            $errorHlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
+<!doctype html>
+<html>
+<head>
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load()</script>
+</head>
 
-    }
-    else
-        $errorHlaska = 'Formulář není správně vyplněný!';
-}
-
-
-?>
-
-<p style="font-size: xx-large;background-color: red">
-    <?php echo $errorHlaska ?>
-</p>
-
-<p style="font-size: xx-large;background-color: lightskyblue">
-    <?php echo $successHlaska ?>
-</p>
-
+<body>
 
 <h1 style="text-align: center">KONTAKT</h1>
 
-<main>
+<div class="center-wrapper">
 
-    <div class="center-wrapper">
-        <div>
-            <h2  style="text-align: center">Nebojte se mě kontaktovat s jakýmkoliv dotazem</h2>
-            <hr>
+<div class="flex-wrap">
 
-
-    </div>
+<div class="card"  id="mapa"></div>
 
 
-        <form method="POST">
-            <table>
-                <tr>
-                    <td>Vaše jméno</td>
-                    <td><input name="jmeno" type="text" /></td>
-                </tr>
-                <tr>
-                    <td>Váš email</td>
-                    <td><input name="email" type="email" /></td>
-                </tr>
-            </table>
-            <textarea name="zprava"></textarea><br />
+    <section  class="card">
 
-            <input type="submit" value="Odeslat" />
-        </form>
+        <address style="font-size: large">
+            Lukášovo, s. r. o.<br>
+            1997 Vyskytná <br>
+            CZ<br>
+            +420 123 456 789<br>
+            E-mail: <a href="mailto: st52557@student.upce.cz">
+                st52557@student.upce.cz</a><br>
+        </address>
+    </section>
 
-    <hr>
-</main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+		var stred = SMap.Coords.fromWGS84(15.3630992, 49.4334075);
+		var mapa = new SMap(JAK.gel("mapa"), stred, 9);
+		mapa.addDefaultLayer(SMap.DEF_BASE).enable();
+
+
+		var center = SMap.Coords.fromWGS84(15.3630992, 49.4334075);
+var m = new SMap(JAK.gel("mapa"), center, 9);
+m.addDefaultLayer(SMap.DEF_BASE).enable();
+m.addDefaultControls();
+
+var layer = new SMap.Layer.Marker();
+m.addLayer(layer);
+layer.enable();
+
+var card = new SMap.Card();
+card.getHeader().innerHTML = "<strong>Zde nás najdete</strong>";
+card.getBody().innerHTML = "49.4334075N, 15.3630992E";
+
+var options = {
+    title: "Dobré ráno"
+};
+var marker = new SMap.Marker(center, "myMarker", options);
+marker.decorate(SMap.Marker.Feature.Card, card);
+layer.addMarker(marker);
+
+
+	</script>
+
+
+
+</body>
+</html>

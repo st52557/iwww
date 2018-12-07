@@ -139,3 +139,10 @@ foreach ($stmt as $row) {
 }
 
 echo '</table>';
+
+if ($mojeRole == 'a'){
+
+?>
+
+<button id="jsonExport" onclick="location.href = 'page/auta/auta_json_helper.php'">Export - json</button>
+<?php } ?>

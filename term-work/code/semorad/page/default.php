@@ -1,16 +1,15 @@
-
 <section id="hero">
     <div>
-        <h1>Ani trochu Honzovo</h1>
-        <a href="#">Tohle tlačítko nic nedělá</a>
+        <h1 id="heroText">Semorad Servis</h1>
+        <a href="#second">Vítejte</a>
     </div>
 </section>
 
 
 <main>
-    <div class="center-wrapper">
+    <div id="second" class="center-wrapper">
         <div>
-            <h2>Who am I?</h2>
+            <h2 style="text-align: center">Kdo jsem?</h2>
             <p>
                 Sám to nevím<strong>bohužel</strong>
                 <i>neco dalšího</i>
@@ -67,3 +66,6 @@
 
     <hr>
 </main>
+
+
+

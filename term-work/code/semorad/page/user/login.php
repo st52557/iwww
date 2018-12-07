@@ -21,7 +21,7 @@ if (!empty($_POST) && !empty($_POST["loginMail"]) && !empty($_POST["loginPasswor
     if (!$user) {
         $ErrMessage = "Uživatel nenalezen!";
     } else {
-        $Message = "Jste přihlášen, Vaše ID: " . $user["ID_Uzivatel"];
+        $Message = "Vítejte  " . $user["email"];
         $_SESSION["user_id"] = $user["ID_Uzivatel"];
         $_SESSION["user_email"] = $user["email"];
         $_SESSION["user_role"] = $user["role"];

@@ -1,5 +1,6 @@
-
-    <h2 style="text-align: center">Faktura č. <?php echo $_GET["id_faktury"] ?></h2>
+<div id="printElement">
+<h2 style="text-align: center" xmlns="">Faktura č. <?php echo $_GET["id_faktury"] ?></h2>
+    <h3 id="onlyPrint"> Vystaveno pro <?php echo $_SESSION["user_email"] ?></h3>
 
 <?php
 
@@ -40,7 +41,8 @@ $stmt->bindParam(":id_faktury", $_GET["id_faktury"]);
 $stmt->execute();
 
 
-echo '<table class="tabulka_crud">';
+echo '<table class="tabulka_crud" style=" margin-bottom: 30px;
+">';
 
 echo '  
   <tr>
@@ -69,5 +71,17 @@ $cenaCelkem = $cenaCelkem + $row["Skutecna_cena"];
 echo '</table>';
 
 ?>
+<script>
+    function tisk() {
+    window.print();
+    }
+</script>
 
-    <h2 style="text-align: center">Celková cena:  <?php echo $cenaCelkem ?> Kč.</h2>
+<div>
+
+    <h2 style="text-align: center;margin-bottom: 100px;">Celková cena:  <?php echo $cenaCelkem ?> Kč.</h2>
+    <button id="tiskBtn" onclick="tisk()">Vytisknout</button>
+
+</div>
+
+</div>

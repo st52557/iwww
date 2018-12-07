@@ -41,15 +41,22 @@ $message = "Email address is needed!";
 
     <link rel="stylesheet" type="text/css"
           href="styles.css">
-    <title>Lukášovo</title>
+    <title>LukasServis</title>
 </head>
 <body>
 <header>
 
         <ul>
-            <li><a href="<?=BASE_URL . "?page=default" ?>">Domů</a></li>
-            <li>  <a href="<?=BASE_URL . "?page=galerie" ?>">Galerie</a></li>
-            <li>  <a href="<?=BASE_URL . "?page=kontakt" ?>">Kontakt</a></li>
+            <li class="navTlacitka"><a href="<?=BASE_URL . "?page=default" ?>">Domů</a></li>
+            <li class="navTlacitka">  <a href="<?=BASE_URL . "?page=galerie" ?>">Galerie</a></li>
+            <li class="navTlacitka">  <a href="<?=BASE_URL . "?page=kontakt" ?>">Kontakt</a></li>
+            <li >
+                <a id="loged">
+                <div id="loginMsg" >
+                    <?php echo $_SESSION["LoginMsg"]; ?>
+                </div>
+                </a>
+            </li>
 
             <?php if (!empty($_SESSION["user_id"])) { ?>
             <li class="nav_right">   <a href="<?=BASE_URL . "?page=user/logout" ?>">Odhlásit</a></li>
@@ -68,10 +75,13 @@ $message = "Email address is needed!";
             <li class="nav_right">  <a href="<?= BASE_URL . "?page=user/user-add&action=create" ?>">Registrovat</a></li>
             <?php } ?>
 
+
+
         </ul>
 
+
+
 </header>
-<?php echo $_SESSION["LoginMsg"]; ?>
 
 
 <?php
