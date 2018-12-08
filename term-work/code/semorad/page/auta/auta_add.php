@@ -98,12 +98,15 @@ $mojeId = ($_SESSION["user_id"]);
 $mojeRole = ($_SESSION["user_role"]);
 if ($mojeRole == 'a'){
 
-    $stmt = $conn->prepare("SELECT * FROM Auta");
+    $stmt = $conn->prepare("SELECT * FROM Auta JOIN autoservis.Uzivatele 
+    ON(autoservis.Auta.ID_Uzivatele = autoservis.Uzivatele.ID_Uzivatel) ");
     $stmt->bindParam(":id_user", $mojeId);
     $stmt->execute();
 
 } else {
-    $stmt = $conn->prepare("SELECT * FROM Auta WHERE autoservis.Auta.ID_Uzivatele = :id_user");
+    $stmt = $conn->prepare("SELECT * FROM Auta JOIN autoservis.Uzivatele 
+    ON(autoservis.Auta.ID_Uzivatele = autoservis.Uzivatele.ID_Uzivatel) 
+    WHERE autoservis.Auta.ID_Uzivatele = :id_user");
     $stmt->bindParam(":id_user", $mojeId);
     $stmt->execute();
 }
@@ -113,11 +116,11 @@ echo '<table class="tabulka_crud">';
 
 echo '  
   <tr>
-    <th>Id</th>
+    <th>ID</th>
     <th>SPZ</th> 
     <th>Nazev</th>
     <th>Majitel</th>
-    <th>Actions</th>
+    <th>Akce</th>
   </tr>';
 
 foreach ($stmt as $row) {
@@ -127,12 +130,17 @@ foreach ($stmt as $row) {
     <td >' . $row["ID_Auto"] . '</td>
     <td >' . $row["Spz"] . '</td >
     <td >' . $row["Nazev"] . '</td > 
-    <td >' . $row["ID_Uzivatele"] . '</td > 
+    <td >' . $row["email"] . '</td > 
     <td>
         <a href="?page=opravy/opravy_add&id='.$row["ID_Auto"].'&spz='.$row["Spz"].'">Podrobnosti</a>
-        <a href="?page=auta/auta_index&action=update&id='.$row["ID_Auto"].'">U</a>
-        <a href="?page=auta/auta_index&action=delete&id='.$row["ID_Auto"].'">D</a>
-
+        
+        ';
+    if ($mojeRole == 'a'){ ?>
+        <a href="?page=auta/auta_index&action=update&id='.$row["ID_Auto"].'">Upravit</a>
+        <a href="?page=auta/auta_index&action=delete&id='.$row["ID_Auto"].'">Odstranit</a>
+<?php }  echo '
+        
+        
     </td>
   </tr >';
 
@@ -140,9 +148,6 @@ foreach ($stmt as $row) {
 
 echo '</table>';
 
-if ($mojeRole == 'a'){
-
-?>
-
+if ($mojeRole == 'a'){ ?>
 <button id="jsonExport" onclick="location.href = 'page/auta/auta_json_helper.php'">Export - json</button>
 <?php } ?>

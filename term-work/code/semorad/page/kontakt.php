@@ -11,14 +11,12 @@
 
 <h1 style="text-align: center">KONTAKT</h1>
 
-<div class="center-wrapper">
-
-<div class="flex-wrap">
+<div class="flex-wrap-map">
 
 <div class="card"  id="mapa"></div>
 
 
-    <section  class="card">
+    <section style="text-align: left"  class="card">
 
         <address style="font-size: large">
             Lukášovo, s. r. o.<br>

@@ -2,42 +2,13 @@
 include "page/config.php";
 ob_start();
 session_start();
-
-$message = "";
-if (isset($_POST['newsletter'])) {
-if (!empty($_POST['email'])) {
-if ((preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $_POST['email']))) {
-try {
-$conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-// prepare sql and bind parameters
-$stmt = $conn->prepare("INSERT INTO newsletter (email, created) VALUES (:email, NOW())");
-$stmt->bindParam(':email', $_POST["email"]);
-$stmt->execute();
-
-$message = "Your are subscribed!";
-} catch (PDOException $e) {
-echo "Error: " . $e->getMessage();
-$message = "Unable to save to the database!";
-}
-} else {
-$message = "Bad formatted email address!";
-}
-} else {
-$message = "Email address is needed!";
-}
-}
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
 
     <link rel="stylesheet" type="text/css"
           href="styles.css">
@@ -75,11 +46,7 @@ $message = "Email address is needed!";
             <li class="nav_right">  <a href="<?= BASE_URL . "?page=user/user-add&action=create" ?>">Registrovat</a></li>
             <?php } ?>
 
-
-
         </ul>
-
-
 
 </header>
 
@@ -133,18 +100,18 @@ window.onclick = function(event) {
     <div class="full-width-wrapper">
         <div class="flex-wrap">
             <section class="card">
-                <h4>About me</h4>
+                <h4>Užitečné odkazy</h4>
                 <ul>
-                    <li><a href="#">Work with me</a> </li>
-                    <li><a href="#">References</a> </li>
-                    <li><a href="#">Contact me</a> </li>
-                    <li><a href="#">Authors</a> </li>
-                    <li><a href="#">Login</a> </li>
+                    <li><a href="#">Naši dodavatelé</a> </li>
+                    <li><a href="#">Spolupráce</a> </li>
+                    <li><a href="#">Vybavení</a> </li>
+                    <li><a href="#">Autorizace</a> </li>
+                    <li><a href="#">O nás</a> </li>
                 </ul>
             </section>
 
             <section  class="card">
-                <h4>Contact</h4>
+                <h4>Kontakt</h4>
                 <address>
                     Lukášovo, s. r. o.<br>
                     1997 Vyskytná <br>
@@ -156,54 +123,19 @@ window.onclick = function(event) {
             </section>
 
 
-
-            <section id="footer-newsletter" class="card" >
-                <h4>Newsletter</h4>
-
-                <form method="POST" action="#">
-                    <div>
-                        <label>
-                            Enter your Email address:
-                        </label>
-                    </div>
-
-                    <div>
-                        <input type="text"
-                               name="email"/>
-                    </div>
-                    <div>
-                        <input type="submit"
-                               name="newsletter"
-                               value="Subscribe"/>
-                    </div>
-                    <?php
-                    if (!empty($message)) {
-                        echo $message;
-                        $message = "";
-                    }
-                    ?>
-                </form>
-
-            </section>
-
-
-
-
-
-
-            <section class="card">
-                <p>
-                    Copyleft
-                    <?= date ("Y",strtotime("-1 year")); ?>
-                    –
-                    <?php echo date("Y"); ?>
-                    <a href="https://github.com">
-                        Lukáš
-                    </a>
-                </p>
-            </section>
-
         </div>
+        <section style="margin: auto" class="card">
+            <p>
+                Copyleft
+                <?= date ("Y",strtotime("-1 year")); ?>
+                –
+                <?php echo date("Y"); ?>
+                <a href="https://github.com">
+                    Lukáš
+                </a>
+            </p>
+        </section>
+
     </div>
 
 </footer>

@@ -2,41 +2,45 @@
 
 <h1 style="text-align: center">GALERIE</h1>
 
-<main>
-    <div class="center-wrapper">
-        <div>
+<main >
+
+
             <h2  style="text-align: center">Pár obrázků z mého prostředí</h2>
             <hr>
+    <br>
 
-            <div class="flex-wrap">
 
+    <div class="flex-wrap">
+        <img src="img/galerie_1.jpg" alt="img">
+        <div class="card">
+        <h3>Opravíme cokoliv</h3>
+        <p>Nulla pulvinar eleifend sem. Phasellus rhoncus. Cras elementum. Maecenas libero.
+            Mauris dictum facilisis augue. Nullam dapibus fermentum ipsum. Mauris metus.</p>
 
-                    <img src="img/dum.jpg">
-                    <h2>Náš rodinný dům</h2>
-                <p>
-                    Popis obrázku je velice zajímavý a rozmanitý.
-                </p>
+    </div>
+</div>
 
-            </div>
-            <hr>
-
-            <div class="flex-wrap">
-
-            <img src="img/dilna.jpg">
-            <h2>Má dílna</h2>
-            <p>Má dílna je prostorná a vejde se do ní veliké množství věcí.</p>
-            </div>
-            <hr>
-
-            <div class="flex-wrap">
-
-                <img src="img/zdviz.jpg">
-                <h2>Moje vybavení</h2>
-                <p>V dílně mám mnoho přístrojů, které usnadnují práci.</p>
-            </div>
+    <div class="flex-wrap">
+        <img  src="img/galerie_2.jpg" alt="img">
+        <div class="card">
+            <h3>Pracujeme na plný výkon</h3>
+            <p>Nunc tincidunt ante vitae massa. Fusce tellus odio, dapibus id fermentum quis, suscipit
+                id erat. Pellentesque sapien. Nulla pulvinar eleifend sem. Phasellus rhoncus. Cras elementum.
 
         </div>
     </div>
+
+    <div class="flex-wrap">
+        <img src="img/galerie_3.jpg" alt="img">
+        <div class="card">
+            <h3>Používáme nejkvalitnější díly</h3>
+            <p>Nunc tincidunt ante vitae massa. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
+                Pellentesque sapien. Nulla pulvinar eleifend sem. Phasellus rhoncus. Cras elementum. Maecenas libero.
+
+        </div>
+    </div>
+
+
 
     <hr>
 </main>

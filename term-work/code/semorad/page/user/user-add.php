@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $stmt = $conn->prepare("INSERT INTO Uzivatele (email, password, vytvoreno)
-    VALUES (:email, :password, NOW())");
+    VALUES (:email, :password, now())");
         $stmt->bindParam(':email', $_POST["email"]);
         $stmt->bindParam(':password', $hashedPass);
         $stmt->execute();
