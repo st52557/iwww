@@ -9,13 +9,10 @@ if(isset($_POST["isSubmitted"])){
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
-    if (empty($_POST["pred_cena"])) {
-        $feedbackMessage = "Předběžná cena is required";
-        array_push($errorFeedbacks, $feedbackMessage);
-    }
 
-    if (empty($_POST["id_faktura"])) {
-        $feedbackMessage = "Číslo faktury is required";
+
+    if (empty($_POST["ID_Soubor_oprav"])) {
+        $feedbackMessage = "Číslo soubor_oprav is required";
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
@@ -25,22 +22,21 @@ if(isset($_POST["isSubmitted"])){
 
     if (empty($errorFeedbacks)) {
 
-        $stav = 1;
+        $stav = "Neschvaleno";
 
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $conn->prepare("INSERT INTO Oprava (Typ_opravy, Predbezna_cena, Skutecna_cena, ID_Auto, ID_Faktura, ID_Stav_opravy)
-    VALUES (:typ, :p_cena, :sk_cena, :id, :id_fakt, :id_stav)");
+        $stmt = $conn->prepare("INSERT INTO Oprava (ID_Typ_opravy, Skutecna_cena, ID_Souboru_oprav, Stav)
+    VALUES (:typ, :sk_cena, :ID_Soub_opravy, :stav)");
 
-        $stmt->bindParam(':id', $_GET["id"]);
+
         $stmt->bindParam(':typ', $_POST["typ"]);
-        $stmt->bindParam(":p_cena", $_POST["pred_cena"]);
         $stmt->bindParam(":sk_cena", $_POST["skut_cena"]);
-        $stmt->bindParam(":id_fakt", $_POST["id_faktura"]);
-        $stmt->bindParam(":id_stav", $stav);
+        $stmt->bindParam(":ID_Soub_opravy", $_POST["ID_Soubor_oprav"]);
+        $stmt->bindParam(":stav", $stav);
         $stmt->execute();
-        $successFeedback = "Oprava was added";
+        $successFeedback = "Oprava přidána";
 
     }
 }
@@ -59,25 +55,44 @@ if (!empty($errorFeedbacks)) {
 ?>
 
 
-<?php //vybere faktury do combo boxu - nedokončené, a platné k danému autu
+<?php //vybere soubor_oprav do combo boxu
 
-$stavFaktury = 1;  //stav faktury - nedokončeno
+$stavFaktury = "Nedokončeno";
 
 
 
 $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$stmt = $conn->prepare("SELECT ID_Faktura,ID_Stav_faktury,ID_Auto FROM autoservis.Faktura 
-                                 WHERE ID_Auto = :id_auta AND ID_Stav_faktury = :id_stav");
+$stmt = $conn->prepare("SELECT ID_Soubor_oprav,ID_Auto FROM autoservis.Soubor_oprav 
+                                 WHERE ID_Auto = :id_auta");
 
 
 $stmt->bindParam(":id_auta", $_GET["id"]);
-$stmt->bindParam(":id_stav", $stavFaktury);
 $stmt->execute();
 
 foreach ($stmt as $row) {
-    $option .= '<option value = "'.$row['ID_Faktura'].'">'.$row['ID_Faktura'].'</option>';
+    $option .= '<option value = "'.$row['ID_Soubor_oprav'].'">'.$row['ID_Soubor_oprav'].'</option>';
+}
+
+?>
+
+<?php //vybere typy_opravy do combo boxu
+
+$stavFaktury = "Nedokončeno";
+
+
+
+$conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$stmt = $conn->prepare("SELECT ID_Typ_Opravy,Nazev_opravy FROM autoservis.Typ_Opravy");
+
+$stmt->execute();
+
+foreach ($stmt as $row) {
+
+    $optionTyp .= '<option value = "'.$row['ID_Typ_Opravy'].'">'.$row['Nazev_opravy'].'</option>';
 }
 
 ?>
@@ -99,12 +114,15 @@ foreach ($stmt as $row) {
         </p>
 
         <form method="post">
-            <input type="text" name="typ" placeholder="Typ opravy"/>
-            <input type="text" name="pred_cena" placeholder="Predběžná cena"/>
+            <select name="typ">
+                <option value="" disabled selected hidden>Vyberte typ opravy</option>
+                <?php echo $optionTyp; ?>
+            </select>
+
             <input type="text" name="skut_cena" placeholder="Skutečná cena"/>
 
-            <select name="id_faktura">
-                <option value="" disabled selected hidden>Vyberte č. faktury</option>
+            <select name="ID_Soubor_oprav">
+                <option value="" disabled selected hidden>Vyberte č. souboru oprav</option>
                 <?php echo $option; ?>
             </select>
 
@@ -123,17 +141,17 @@ foreach ($stmt as $row) {
 if(isset($_POST["submit"]) or isset($_POST["submitFalse"]) or isset($_POST["submitDone"])) {
 
     if(isset($_POST["submit"])){
-        $stav = 2;  //schváleno
+        $stav = "Schváleno";
     }else if(isset($_POST["submitFalse"])) {
-        $stav = 4;  //zamítnuto
+        $stav = "Zamítnuto";
     } else {
-        $stav = 3;  //dokonceno (admin)
+        $stav = "Dokončeno";
     }
 
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare("UPDATE Oprava SET ID_Stav_Opravy=:stav WHERE ID_Oprava=:id");
+    $stmt = $conn->prepare("UPDATE Oprava SET Stav=:stav WHERE ID_Oprava=:id");
 
     $stmt->bindParam(":id", $_POST["id_opravy"]);
     $stmt->bindParam(":stav", $stav);
@@ -147,9 +165,9 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $mojeRole = ($_SESSION["user_role"]);
 
 
-    $stmt = $conn->prepare("SELECT * FROM Oprava JOIN stav_opravy ON 
- autoservis.Oprava.ID_Stav_opravy = autoservis.stav_opravy.ID_Stav_opravy
- WHERE autoservis.Oprava.ID_Auto = :id_auta");
+    $stmt = $conn->prepare("SELECT * FROM Oprava JOIN autoservis.Soubor_oprav ON(ID_souboru_oprav = ID_Soubor_oprav)
+ JOIN autoservis.Typ_Opravy ON(autoservis.Oprava.ID_Typ_opravy = autoservis.Typ_Opravy.ID_Typ_opravy)
+ WHERE ID_Auto = :id_auta");
 
     $stmt->bindParam(":id_auta", $_GET["id"]);
     $stmt->execute();
@@ -159,7 +177,7 @@ echo '<table class="tabulka_crud">';
 
 echo '  
   <tr>
-    <th>Č. faktury</th>
+    <th>Č. souboru oprav</th>
     <th>Typ Opravy</th>
     <th>Předběžná cena</th> 
     <th>Skutečná cena</th>
@@ -171,11 +189,11 @@ foreach ($stmt as $row) {
 
     echo '   
    <tr >
-    <td >' . $row["ID_Faktura"] . '</td>
-    <td >' . $row["Typ_opravy"] . '</td>
-    <td >' . $row["Predbezna_cena"] . '</td >
+    <td >' . $row["ID_Soubor_oprav"] . '</td>
+    <td >' . $row["Nazev_opravy"] . '</td>
+    <td >' . $row["Cena"] . '</td >
     <td >' . $row["Skutecna_cena"] . '</td > 
-    <td >' . $row["Typ_stavu"] . '</td > 
+    <td >' . $row["Stav"] . '</td > 
     <td>
         
         

@@ -49,10 +49,10 @@ if (empty($errorFeedbacks)) {
     $stmt->execute();
     $user = $stmt->fetch();
 
-    $emailValue = $user["email"];
+    $emailValue = $user["Email"];
     $passwordValue = $user["password"];
 } else { //in case of any error, load data
-    $emailValue = $_POST["email"];
+    $emailValue = $_POST["Email"];
     $passwordValue = $_POST["password"];
 }
 ?>

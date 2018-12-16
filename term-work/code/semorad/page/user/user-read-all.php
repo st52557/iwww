@@ -20,9 +20,9 @@ foreach ($data as $row) {
     echo '   
    <tr >
     <td >' . $row["ID_Uzivatel"] . '</td>
-    <td >' . $row["email"] . '</td >
+    <td >' . $row["Email"] . '</td >
     <td >' . $row["Vytvoreno"] . '</td > 
-    <td >' . $row["role"] . '</td > 
+    <td >' . $row["Role"] . '</td > 
     <td>
         <a href="?page=user/user-index&action=update&id='.$row["ID_Uzivatel"].'">Upravit</a>
         <a href="?page=user/user-index&action=delete&id='.$row["ID_Uzivatel"].'">Smazat</a>

@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $conn->prepare("UPDATE Uzivatele 
-        SET password= :password  WHERE ID_Uzivatel = :id");
+        SET Heslo= :password  WHERE ID_Uzivatel = :id");
         $stmt->bindParam(':id', $_SESSION["user_id"]);
         $stmt->bindParam(':password', $hashedPassNew);
         $stmt->execute();

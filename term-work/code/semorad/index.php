@@ -33,7 +33,7 @@ session_start();
             <li class="nav_right">   <a href="<?=BASE_URL . "?page=user/logout" ?>">Odhlásit</a></li>
             <li class="nav_right">   <a href="<?= BASE_URL . "?page=auta/auta_add" ?>">Moje Auta</a></li>
             <li class="nav_right">   <a href="<?=BASE_URL . "?page=zmena_hesla" ?>">Změna hesla</a></li>
-            <li class="nav_right">   <a href="<?=BASE_URL . "?page=faktury/faktury_add" ?>">Faktury</a></li>
+            <li class="nav_right">   <a href="<?=BASE_URL . "?page=soubor_oprav/soubor_oprav_add" ?>">Soubory oprav</a></li>
                 <li class="nav_right">   <a href="<?=BASE_URL . "?page=predani_auta/predani_all" ?>">Předání auta</a></li>
 
             <?php  if (($_SESSION["user_role"])=='a'){ ?>

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $conn->prepare("INSERT INTO Uzivatele (email, password, vytvoreno)
+        $stmt = $conn->prepare("INSERT INTO Uzivatele (email, heslo, vytvoreno)
     VALUES (:email, :password, now())");
         $stmt->bindParam(':email', $_POST["email"]);
         $stmt->bindParam(':password', $hashedPass);

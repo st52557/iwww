@@ -130,7 +130,7 @@ foreach ($stmt as $row) {
     <td >' . $row["ID_Auto"] . '</td>
     <td >' . $row["Spz"] . '</td >
     <td >' . $row["Nazev"] . '</td > 
-    <td >' . $row["email"] . '</td > 
+    <td >' . $row["Email"] . '</td > 
     <td>
         <a href="?page=opravy/opravy_add&id='.$row["ID_Auto"].'&spz='.$row["Spz"].'">Podrobnosti</a>
         
