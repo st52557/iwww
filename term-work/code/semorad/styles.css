@@ -302,7 +302,7 @@ text-align: left;
     width: 600px;
     height: 400px;
     margin-bottom: 70px;
-   border: #4a4a4a 3px solid;
+    border: #4a4a4a 3px solid;
 
 }
 
@@ -400,14 +400,6 @@ footer a {
 
 
 
-
-
-
-
-
-
-
-
 /* Full-width input fields */
 .modal input[type=text], input[type=password] {
     width: 90%;
@@ -439,11 +431,6 @@ button:hover {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
-}
-.avatar {
-    width: 200px;
-    height:200px;
-    border-radius: 50%;
 }
 
 /* The Modal (background) */

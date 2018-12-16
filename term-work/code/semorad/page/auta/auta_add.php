@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         array_push($errorFeedbacks, $feedbackMessage);
     }
 
-
     if (empty($errorFeedbacks)) {
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -24,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
 
         $id_majitele = $stmt;
- //   echo "ID majitele: " + $id_majitele;
+
         if(empty($id_majitele)){
             $feedbackMessage = "ID podle emailu nenalezeno";
             array_push($errorFeedbacks, $feedbackMessage);
@@ -32,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
 
-    if (empty($errorFeedbacks)) {
+    if (empty($errorFeedbacks)) {   //přidání auta
 
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -86,7 +85,6 @@ if (!empty($errorFeedbacks)) {
     </div>
 
 <?php } ?>
-
 
 <?php
 //crud tabulka

@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':id', $_GET["id"]);
         $stmt->bindParam(":sk_cena", $_POST["sk_cena"]);
         $stmt->execute();
-        $successFeedback = "Oprava was updated";
+        $successFeedback = "Oprava byla upravena";
         //přesměrování zpět na opravy ? header?
     }
 }
@@ -43,12 +43,9 @@ if (empty($errorFeedbacks)) { //load data origin data from database
     $stmt->execute();
     $oprava = $stmt->fetch();
 
-    $typValue = $oprava["Typ_opravy"];
-    $p_cenaValue = $oprava["Predbezna_cena"];
+
     $sk_cenaValue = $oprava["Skutecna_cena"];
-} else { //in case of any error, load data
-    $typValue = $_POST["typ"];
-    $p_cenaValue = $_POST["pred_cena"];
+} else {
     $sk_cenaValue = $_POST["skut_cena"];
 }
 ?>

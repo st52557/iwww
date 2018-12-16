@@ -86,23 +86,18 @@ $stavFaktury = "Nedokončeno";
 $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$stmt = $conn->prepare("SELECT ID_Typ_Opravy,Nazev_opravy FROM autoservis.Typ_Opravy");
-
+$stmt = $conn->prepare("SELECT ID_Typ_Opravy, Nazev_opravy FROM Typ_Opravy");
 $stmt->execute();
 
 foreach ($stmt as $row) {
-
-    $optionTyp .= '<option value = "'.$row['ID_Typ_Opravy'].'">'.$row['Nazev_opravy'].'</option>';
+    $comboTyp .= '<option value = "'.$row['ID_Typ_Opravy'].'">'.$row['Nazev_opravy'].'</option>';
 }
 
 ?>
 
-
-
 <?php  if (($_SESSION["user_role"])=='a'){ ?>
 
     <div class="formular">
-
         <h1>Přidání nové opravy: </h1>
 
         <p style="font-size: xx-large;background-color: red">
@@ -116,7 +111,7 @@ foreach ($stmt as $row) {
         <form method="post">
             <select name="typ">
                 <option value="" disabled selected hidden>Vyberte typ opravy</option>
-                <?php echo $optionTyp; ?>
+                <?php echo $comboTyp; ?>
             </select>
 
             <input type="text" name="skut_cena" placeholder="Skutečná cena"/>
@@ -204,8 +199,16 @@ foreach ($stmt as $row) {
     <form method="post">
 
     <input type="hidden" name="id_opravy" value="<?php echo $row["ID_Oprava"] ?>">
+        <?php  if($row["Stav"] == "Zamítnuto"){ ?>
     <input type="submit" name="submit" value="Schválit">
+        <?php
+        }else if($row["Stav"] == "Schváleno"){ ?>
     <input type="submit" name="submitFalse" value="Zamítnout">
+
+        <?php }else { ?>
+            <input type="submit" name="submit" value="Schválit">
+            <input type="submit" name="submitFalse" value="Zamítnout">
+        <?php } ?>
     </form>
     <?php
 
@@ -214,11 +217,12 @@ foreach ($stmt as $row) {
         ';  if ($mojeRole == 'a'){
             echo '
         <a href="?page=opravy/opravy_update&id='.$row["ID_Oprava"].'">Upravit (A)</a>
+        <a href="?page=opravy/opravy_delete&id='.$row["ID_Oprava"].'">Odstranit (A)</a>
           ';
     ?>
         <form method="post">
     <input type="hidden" name="id_opravy" value="<?php echo $row["ID_Oprava"] ?>">
-    <input type="submit" name="submitDone" value="Dokončit">
+    <input type="submit" name="submitDone" value="Dokončit (A)">
     </form>
         <?php
 

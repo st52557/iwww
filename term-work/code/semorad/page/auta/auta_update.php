@@ -36,7 +36,7 @@ if (!empty($errorFeedbacks)) {
 ?>
 
 <?php
-if (empty($errorFeedbacks)) { //load data origin data from database
+if (empty($errorFeedbacks)) {
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare("SELECT * FROM Auta WHERE ID_Auto = :id");

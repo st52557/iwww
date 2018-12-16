@@ -1,6 +1,5 @@
 <?php
 
-
 if(isset($_POST["isSubmitted"])){
     $errorFeedbacks = array();
     $successFeedback = "";
@@ -13,10 +12,6 @@ if(isset($_POST["isSubmitted"])){
     if (empty($errorFeedbacks)) {
 
 
-
-        echo "----------------------";
-        echo $_POST["spz"];
-
         $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -26,7 +21,7 @@ if(isset($_POST["isSubmitted"])){
 
         $stmt->bindParam(":id_auta", $_POST["id_auta"]);
         $stmt->execute();
-        $successFeedback = "Soubor_oprav přidána";
+        $successFeedback = "Soubor_oprav přidán";
 
     }
 }
