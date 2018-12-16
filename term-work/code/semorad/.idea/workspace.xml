@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b916381b-2322-4ad7-9994-fc102d48b0e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/auta/auta_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/auta/auta_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/auta/auta_json_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/auta/auta_json_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/auta/auta_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/auta/auta_update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/opravy/opravy_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/opravy/opravy_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/opravy/opravy_delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/opravy/opravy_delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/opravy/opravy_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/opravy/opravy_update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/soubor_oprav/soubor_oprav_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/page/soubor_oprav/soubor_oprav_add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="b916381b-2322-4ad7-9994-fc102d48b0e7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +42,7 @@
     <session id="1000389822">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.25" value="1" />
@@ -72,7 +62,7 @@
           <entry key="Faktura" value="1" />
           <entry key="PHP/C:/Users/Lukáš/Desktop/iwww/simple-docker-web-dev-environment-master/www/iwww/term-work/code/semorad" value="2" />
           <entry key="PHP/C:/Users/Lukáš/Desktop/iwww/simple-docker-web-dev-environment-master/www/iwww/term-work/code/semorad/page" value="1" />
-          <entry key="SCHEMA:autoservis" value="21" />
+          <entry key="SCHEMA:autoservis" value="22" />
           <entry key="auta" value="13" />
           <entry key="auto" value="1" />
           <entry key="auto_uzivatel_id_uzivatel_fk" value="1" />
@@ -83,7 +73,7 @@
           <entry key="oprava" value="19" />
           <entry key="php" value="192" />
           <entry key="polozka_faktury" value="1" />
-          <entry key="predani_auta" value="3" />
+          <entry key="predani_auta" value="5" />
           <entry key="soubor_oprav" value="2" />
           <entry key="sql" value="2" />
           <entry key="stav_faktury" value="11" />
@@ -96,12 +86,12 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="14" />
-          <entry key="Database Element" value="91" />
+          <entry key="Database Element" value="93" />
           <entry key="JSON" value="1" />
           <entry key="PHP" value="192" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="2" />
-          <entry key="UML" value="26" />
+          <entry key="UML" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -127,17 +117,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="433" column="1" selection-start-line="433" selection-start-column="1" selection-end-line="433" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -329,18 +309,17 @@
       <workItem from="1544434169249" duration="2580000" />
       <workItem from="1544436863297" duration="14446000" />
       <workItem from="1544627290232" duration="10000" />
-      <workItem from="1544971229320" duration="13794000" />
+      <workItem from="1544971229320" duration="15191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119491000" />
+    <option name="totallyTimeSpent" value="120888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13671875" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13671875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="SQL Generator" weight="0.4752747" />
@@ -360,7 +339,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.19140625" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.19140625" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.13671875" />
@@ -521,30 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis</OriginalElement>
-          <nodes>
-            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele</node>
-            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta</node>
-            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava</node>
-            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Soubor_oprav</node>
-            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Typ_Opravy</node>
-            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="260.5" y="398.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/typ_opravy">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -560,13 +515,6 @@
       </provider>
     </entry>
     <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/auta">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/predani_auta">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -794,8 +742,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="433" column="1" selection-start-line="433" selection-start-column="1" selection-end-line="433" selection-end-column="1" />
+        <state relative-caret-position="493">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>dd17283d-d899-4a33-98dc-28b6557394c3.SCHEMA:autoservis</OriginalElement>
+          <nodes>
+            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Uzivatele</node>
+            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Predani_auta</node>
+            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Oprava</node>
+            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Typ_Opravy</node>
+            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Soubor_oprav</node>
+            <node x="" y="">dd17283d-d899-4a33-98dc-28b6557394c3.TABLE:autoservis.Auta</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.9273972602739726" x="301.5" y="355.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://dd17283d-d899-4a33-98dc-28b6557394c3/schema/autoservis/table/predani_auta">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
