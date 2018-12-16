@@ -37,13 +37,13 @@ session_start();
                 <li class="nav_right">   <a href="<?=BASE_URL . "?page=predani_auta/predani_all" ?>">Předání auta</a></li>
 
             <?php  if (($_SESSION["user_role"])=='a'){ ?>
-            <li class="nav_right">   <a href="<?= BASE_URL . "?page=user/user-index" ?>">Uživatelé</a></li>
+            <li class="nav_right">   <a href="<?= BASE_URL . "?page=user/user_index" ?>">Uživatelé</a></li>
 
             <?php }} else { ?>
             <li class="nav_right" onclick="document.getElementById('modal-wrapper').style.display='block'">
                 <a >Přihlásit se</a></li>
 
-            <li class="nav_right">  <a href="<?= BASE_URL . "?page=user/user-add&action=create" ?>">Registrovat</a></li>
+            <li class="nav_right">  <a href="<?= BASE_URL . "?page=user/user_add&action=create" ?>">Registrovat</a></li>
             <?php } ?>
 
         </ul>
@@ -85,14 +85,7 @@ if( file_exists($file)) {
 
 
 
-<script>
-var modal = document.getElementById('modal-wrapper');
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+
 
 
 

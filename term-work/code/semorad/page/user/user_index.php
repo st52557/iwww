@@ -2,18 +2,18 @@
 
     <?php
 
-    if ($_GET["page"] == "user/user-index") {
+    if ($_GET["page"] == "user/user_index") {
         if ($_GET["action"] == "delete") {
-            include "user-delete.php";
+            include "user_delete.php";
         } else if ($_GET["action"] == "update") {
-            include "user-update.php";
+            include "user_update.php";
         } else if ($_GET["action"] == "create") {
-            include "user-add.php";
+            include "user_add.php";
         } else {
-            include "user-read-all.php";
+            include "user_read_all.php";
         }
     } else {
-        include "user-read-all.php";
+        include "user_read_all.php";
     }
     ?>
 

@@ -24,8 +24,8 @@ foreach ($data as $row) {
     <td >' . $row["Vytvoreno"] . '</td > 
     <td >' . $row["Role"] . '</td > 
     <td>
-        <a href="?page=user/user-index&action=update&id='.$row["ID_Uzivatel"].'">Upravit</a>
-        <a href="?page=user/user-index&action=delete&id='.$row["ID_Uzivatel"].'">Smazat</a>
+        <a href="?page=user/user_index&action=update&id='.$row["ID_Uzivatel"].'">Upravit</a>
+        <a href="?page=user/user_index&action=delete&id='.$row["ID_Uzivatel"].'">Smazat</a>
     </td>
   </tr >';
 
