@@ -57,9 +57,6 @@ if (!empty($errorFeedbacks)) {
 
 <?php //vybere soubor_oprav do combo boxu
 
-$stavFaktury = "Nedokončeno";
-
-
 
 $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -78,9 +75,6 @@ foreach ($stmt as $row) {
 ?>
 
 <?php //vybere typy_opravy do combo boxu
-
-$stavFaktury = "Nedokončeno";
-
 
 
 $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
@@ -132,26 +126,49 @@ foreach ($stmt as $row) {
 <h2 style="text-align: center">Opravy u auta <?php echo $_GET["spz"] ?></h2>
 
 <?php
-
+$SkutCenaJe = true;
 if(isset($_POST["submit"]) or isset($_POST["submitFalse"]) or isset($_POST["submitDone"])) {
 
     if(isset($_POST["submit"])){
         $stav = "Schváleno";
+
+        if(($_POST["skut_cena"] == 0)){
+            $SkutCenaJe = false;
+           echo "bez ceny";
+            $SkutCena = $_POST["pred_cena"];
+                echo "nova cena: ". $SkutCena;
+
+        }
     }else if(isset($_POST["submitFalse"])) {
         $stav = "Zamítnuto";
     } else {
         $stav = "Dokončeno";
     }
+    if($SkutCenaJe){
+        $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $conn->prepare("UPDATE Oprava SET Stav=:stav WHERE ID_Oprava=:id");
 
-    $stmt = $conn->prepare("UPDATE Oprava SET Stav=:stav WHERE ID_Oprava=:id");
+        $stmt->bindParam(":id", $_POST["id_opravy"]);
+        $stmt->bindParam(":stav", $stav);
 
-    $stmt->bindParam(":id", $_POST["id_opravy"]);
-    $stmt->bindParam(":stav", $stav);
+        $stmt->execute();
 
-    $stmt->execute();
+    }else{
+
+        $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $conn->prepare("UPDATE Oprava SET Stav=:stav,Skutecna_cena=:skut_cena WHERE ID_Oprava=:id");
+
+        $stmt->bindParam(":id", $_POST["id_opravy"]);
+        $stmt->bindParam(":stav", $stav);
+        $stmt->bindParam(":skut_cena", $SkutCena);
+
+        $stmt->execute();
+
+    }
 }
 
 $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
@@ -199,6 +216,8 @@ foreach ($stmt as $row) {
     <form method="post">
 
     <input type="hidden" name="id_opravy" value="<?php echo $row["ID_Oprava"] ?>">
+        <input type="hidden" name="skut_cena" value="<?php echo $row["Skutecna_cena"] ?>">
+        <input type="hidden" name="pred_cena" value="<?php echo $row["Cena"] ?>">
         <?php  if($row["Stav"] == "Zamítnuto"){ ?>
     <input type="submit" name="submit" value="Schválit">
         <?php
