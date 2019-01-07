@@ -53,7 +53,7 @@ echo '
   </tr>';
 
 foreach ($stmt as $row) {
-    if($row["Stav"] == "Schváleno") {
+    if($row["Stav"] == "Schváleno" || $row["Stav"] == "Dokončeno") {
         $cenaCelkem = $cenaCelkem + $row["Skutecna_cena"];
     }
     echo '   
